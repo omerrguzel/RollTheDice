@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice(){
+        //This function starts animation,looping 6 svg, changes color and text of button
         runnable = Runnable {
             val random = Random()
             val randomIndex = random.nextInt(6)
@@ -60,9 +61,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun stopDice(){
+        //This function ends animation,changes color and text of button
         handler.removeCallbacks(runnable)
         buttonDice.text = getString(R.string.rollDice)
         buttonDice.setBackgroundColor(ContextCompat.getColor(this, R.color.green))
-
     }
 }
